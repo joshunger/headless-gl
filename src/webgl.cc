@@ -1534,6 +1534,23 @@ GL_METHOD(RenderbufferStorage) {
   (inst->glRenderbufferStorage)(target, internalformat, width, height);
 }
 
+GL_METHOD(RenderbufferStorageMultisample) {
+  GL_BOILERPLATE;
+
+  GLenum target         = info[0]->Int32Value();
+  GLsizei samples       = info[1]->Int32Value();
+  GLenum internalformat = info[2]->Int32Value();
+  GLsizei width         = info[3]->Int32Value();
+  GLsizei height        = info[4]->Int32Value();
+
+  //In WebGL, we map GL_DEPTH_STENCIL to GL_DEPTH24_STENCIL8
+  if (internalformat == GL_DEPTH_STENCIL) {
+    internalformat = GL_DEPTH24_STENCIL8;
+  }
+
+  (inst->glRenderbufferStorageMultisample)(target, samples, internalformat, width, height);
+}
+
 GL_METHOD(GetShaderSource) {
   GL_BOILERPLATE;
 

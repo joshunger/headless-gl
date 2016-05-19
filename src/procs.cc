@@ -99,6 +99,7 @@ void WebGLRenderingContext::initPointers(){
 	glIsShader=reinterpret_cast<PFNGLISSHADERPROC>(eglGetProcAddress("glIsShader"));
 	glIsTexture=reinterpret_cast<PFNGLISTEXTUREPROC>(eglGetProcAddress("glIsTexture"));
 	glRenderbufferStorage=reinterpret_cast<PFNGLRENDERBUFFERSTORAGEPROC>(eglGetProcAddress("glRenderbufferStorage"));
+	glRenderbufferStorageMultisample=reinterpret_cast<PFNGLRENDERBUFFERSTORAGEMULTISAMPLEPROC>(eglGetProcAddress("glRenderbufferStorageMultisample"));
 	glGetShaderSource=reinterpret_cast<PFNGLGETSHADERSOURCEPROC>(eglGetProcAddress("glGetShaderSource"));
 	glValidateProgram=reinterpret_cast<PFNGLVALIDATEPROGRAMPROC>(eglGetProcAddress("glValidateProgram"));
 	glTexSubImage2D=reinterpret_cast<PFNGLTEXSUBIMAGE2DPROC>(eglGetProcAddress("glTexSubImage2D"));

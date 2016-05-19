@@ -3081,6 +3081,17 @@ gl.renderbufferStorage = function renderbufferStorage (
   }
 }
 
+var _renderbufferStorageMultisample = gl.renderbufferStorageMultisample;
+gl.renderbufferStorageMultisample = function renderbufferStorageMultisample (
+  target,
+  samples,
+  internalformat,
+  width,
+  height) {
+
+  return _renderbufferStorageMultisample.call(this, target, samples, internalformat, width, height);
+}
+
 var _sampleCoverage = gl.sampleCoverage
 gl.sampleCoverage = function sampleCoverage (value, invert) {
   return _sampleCoverage.call(this, +value, !!invert)
