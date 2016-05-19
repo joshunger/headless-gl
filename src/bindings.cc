@@ -139,6 +139,7 @@ NAN_MODULE_INIT(Init) {
   JS_GL_METHOD("isTexture", IsTexture);
   JS_GL_METHOD("renderbufferStorage", RenderbufferStorage);
   JS_GL_METHOD("renderbufferStorageMultisample", RenderbufferStorageMultisample);
+  JS_GL_METHOD("blitFramebuffer", BlitFramebuffer);
   JS_GL_METHOD("getShaderSource", GetShaderSource);
   JS_GL_METHOD("validateProgram", ValidateProgram);
   JS_GL_METHOD("texSubImage2D", TexSubImage2D);

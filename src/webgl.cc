@@ -1551,6 +1551,23 @@ GL_METHOD(RenderbufferStorageMultisample) {
   (inst->glRenderbufferStorageMultisample)(target, samples, internalformat, width, height);
 }
 
+GL_METHOD(BlitFramebuffer) {
+  GL_BOILERPLATE;
+
+  GLint srcX0     = info[0]->Int32Value();
+  GLint srcY0     = info[1]->Int32Value();
+  GLint srcX1     = info[2]->Int32Value();
+  GLint srcY1     = info[3]->Int32Value();
+  GLint dstX0     = info[4]->Int32Value();
+  GLint dstY0     = info[5]->Int32Value();
+  GLint dstX1     = info[6]->Int32Value();
+  GLint dstY1     = info[7]->Int32Value();
+  GLbitfield mask = info[8]->Uint32Value();
+  GLenum filter   = info[9]->Uint32Value();
+
+  (inst->glBlitFramebuffer)(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter);
+}
+
 GL_METHOD(GetShaderSource) {
   GL_BOILERPLATE;
 

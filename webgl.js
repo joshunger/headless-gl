@@ -3089,7 +3089,26 @@ gl.renderbufferStorageMultisample = function renderbufferStorageMultisample (
   width,
   height) {
 
-  return _renderbufferStorageMultisample.call(this, target, samples, internalformat, width, height);
+  _renderbufferStorageMultisample.call(this, target, samples, internalformat, width, height);
+}
+
+var _blitFramebuffer = gl.blitFramebuffer;
+gl.blitFramebuffer = function blitFramebuffer(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter) {
+  if (!(arguments.length === 10 &&
+    typeof srcX0 === "number" &&
+    typeof srcY0 === "number" &&
+    typeof srcX1 === "number" &&
+    typeof srcY1 === "number" &&
+    typeof dstX0 === "number" &&
+    typeof dstY0 === "number" &&
+    typeof dstX1 === "number" &&
+    typeof dstY1 === "number" &&
+    typeof mask === "number" &&
+    typeof filter === "number")) {
+    throw new TypeError('Expected blitFramebuffer(number srcX0, number srcY0, number srcX1, number srcY1, number dstX0, number dstY0, number dstX1, number dstY1, number mask, number filter)');
+  }
+
+  _blitFramebuffer.call(this, srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter);
 }
 
 var _sampleCoverage = gl.sampleCoverage

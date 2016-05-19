@@ -238,6 +238,7 @@ struct WebGLRenderingContext : public node::ObjectWrap {
 
   static NAN_METHOD(RenderbufferStorage);
   static NAN_METHOD(RenderbufferStorageMultisample);
+  static NAN_METHOD(BlitFramebuffer);
   static NAN_METHOD(GetShaderSource);
   static NAN_METHOD(ValidateProgram);
 
